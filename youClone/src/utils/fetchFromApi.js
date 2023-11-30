@@ -1,13 +1,15 @@
 import axios from "axios";
+// import { useRouteLoaderData } from "react-rou
 
-const URL='https://youtube-v31.p.rapidapi.com';
+
+const BASE_URL='https://youtube-v31.p.rapidapi.com';
 const options = {
-  method: 'GET',
+  
   params: {
-    maxResults: '5'
+    maxResults: 50,
   },
   headers: {
-    'X-RapidAPI-Key':"87c147f0efmshc8f2dbfa7edbad2p12b65djsnc50608e76893",
+    'X-RapidAPI-Key': '87c147f0efmshc8f2dbfa7edbad2p12b65djsnc50608e76893',
     'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com'
   }
 };
@@ -21,6 +23,6 @@ try {
 
 
 export const fetchFromAPI=async(url)=>{
-   const {data}= await axios.get(`${URL}/${url}`,options);
+   const {data}= await axios.get(`${BASE_URL}/${url}`,options);
    return data;
 }
